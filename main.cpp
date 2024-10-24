@@ -8,6 +8,7 @@ using namespace std;
 int main(){
     UserManagement userManager;
     int choice;
+    cout << "Hello";
     do{
         cout <<"1. Register" << '\n'
             << "2. Login" << '\n'   
