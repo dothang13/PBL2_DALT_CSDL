@@ -12,13 +12,11 @@ class Item{
         int quantity;
         string status;
 
-        static int nextID;
-
     public:
-        // constructor
-        Item(string name, int cost,int quantity = 50, string status = "Available");
+        static string generatedId();
 
-        // getter va setter
+        Item(string id, string name, int cost,int quantity = 100, string status = "Available");
+
         string getIdItem() const;
         void setIdItem(const string& id);
         
@@ -33,7 +31,7 @@ class Item{
 
         int getQuantity() const;
         void setQuantity(int quantity);
-        // other
+
         void display() const;
 
 };

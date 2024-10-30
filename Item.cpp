@@ -1,18 +1,31 @@
 #include "Item.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-
-int Item::nextID = 1;
-
-
-// constructor
-Item::Item(string name, int cost, int quantity, string status)
-    : idItem("ITEM" + to_string(nextID++)), name(name), cost(cost), status(status), quantity(quantity){
-
+Item::Item(string id,string name, int cost, int quantity, string status)
+    :idItem(id), name(name), cost(cost), status(status), quantity(quantity){
 }
 
-// getter va setter
+string Item::generatedId() {
+    ifstream inputFile("ID_Item.txt");
+    int userId = 0;
+    if (inputFile.is_open()) {
+        inputFile >> userId;
+        inputFile.close();
+    }
+    else{
+        ofstream outputFile("ID_Item.txt");
+        outputFile << userId;
+        outputFile.close();
+    }
+    userId++;
+    ofstream outputFile("ID_Item.txt");
+    outputFile << userId;
+    outputFile.close();
+    return "Item" + to_string(userId);
+}
+
 string Item::getIdItem() const{
     return this->idItem;
 }

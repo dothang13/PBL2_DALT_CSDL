@@ -22,6 +22,11 @@ class UserManagement{
         bool updateUser(const string& userId);
 
         void displayAllUsers() const;
+        void loadUsersFromFile();
+        void writeUserDataToFile(ofstream& file, const User* user) const;
+        void writeUserToFile(const User* user, ios_base::openmode mode) const;
+        void saveUsersToFile() const;
+        User* findUserById(const string& userId);       
 
 };
 #endif

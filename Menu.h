@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include <iostream>
+#include <list>
 #include "Item.h"
 using namespace std;
 
@@ -13,6 +14,10 @@ class Menu{
         Menu();
 
         // other
+        void writeItemDataToFile(ofstream& file, const Item& item) const;
+        void saveItemsToFile() const;
+        void loadItemsFromFile();
+
         void addItem(const Item& item);
         bool removeItem(const string& itemId);
         bool updateItem(const string& itemId);

@@ -1,4 +1,13 @@
 User1|hbq|123456|ADMIN
-User2|ndt01|abc123|CUSTOMER
 User3|nguyenvana|abcd1234|EMPLOYEE
 User4|khanhngan|1234|CUSTOMER
+User6|quocbinh12|qbdn1205|EMPLOYEE
+User7|duyanh|duyanhabcd|CUSTOMER
+User9|kieuly|kieuly1234|CUSTOMER
+User10|nganbui|123456789|CUSTOMER
+User11|anhduc|anhduc123|EMPLOYEE
+User12|anhkhabkdn|anhkha@123|CUSTOMER
+User13|trankhanhlinh|linhtran!|CUSTOMER
+User14|j97|97979797|CUSTOMER
+User15|dothang|1310|ADMIN
+User17|My|1001|CUSTOMER

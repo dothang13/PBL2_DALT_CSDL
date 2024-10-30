@@ -7,10 +7,13 @@
 
 using namespace std;
 
+class UserManagement;
+class Menu;
+
 class Employee : public User{
     public:
         Employee(const string &id, const string& username, const string& password);
-        void displayOptions() const override;
+        void displayOptions(UserManagement& userManagement, Menu& menu) const;
 
         void viewOrders() const;
         void manageMenu(Menu& menu) const;
