@@ -1,8 +1,11 @@
 #ifndef USER_H
 #define USER_H
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+
+class UserManagement;
+class Menu;
 
 class User{
     protected:
@@ -11,7 +14,7 @@ class User{
         string password;
     public:
         User(const string& id, const string& username, const string& password);
-        virtual void displayOptions() const = 0;
+        virtual void displayOptions(UserManagement& userManagement, Menu& menu) const = 0;
 
         string getUserId() const;
 

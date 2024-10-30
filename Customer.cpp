@@ -1,4 +1,5 @@
 #include "Customer.h"
+#include "Menu.h"
 #include <iostream>
 using namespace std;
 
@@ -6,7 +7,7 @@ Customer::Customer(const string& id, const string& username, const string& passw
         :User(id, username, password){
 
 }
-void Customer::displayOptions() const{
+void Customer::displayOptions(UserManagement& userManagement, Menu& menu) const{
         cout << "\n--- Customer Options ---" << endl;
         cout << "1. View Menu" << endl;
         cout << "2. Place Order" << endl;

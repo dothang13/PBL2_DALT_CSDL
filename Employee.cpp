@@ -9,11 +9,11 @@ Employee::Employee(const string &id, const string& username, const string& passw
 
 }
 
-void Employee::displayOptions() const{
+void Employee::displayOptions(UserManagement& userManagement, Menu& menu) const{
     cout << "\n--- Employee Options ---" << '\n';
     cout << "1. View Orders" << '\n';
     cout << "2. Manage Menu" << '\n';
-    cout << "3. Logout" << '\n';
+    cout << "3. Exit" << '\n';
 }
 
 void Employee::viewOrders() const{
@@ -35,18 +35,19 @@ void Employee::manageMenu(Menu& menu) const{
                 switch (choice) {
                         case 1:{
                                 // add item
-                                string name;
-                                int price, quantity;
-                                cout << "Enter Item Name: ";
-                                cin.ignore();
-                                getline(cin, name);
-                                cout << "Enter Item Price: ";
-                                cin >> price;
-                                cout << "Enter Item Quantity: ";
-                                cin >> quantity;
-                                menu.addItem(Item(name, price, quantity));
-                                cout << "Item added to the menu." << '\n';
-                                break;
+                                // string name;
+                                // int price, quantity;
+                                // cout << "Enter Item Name: ";
+                                // cin.ignore();
+                                // getline(cin, name);
+                                // cout << "Enter Item Price: ";
+                                // cin >> price;
+                                // cout << "Enter Item Quantity: ";
+                                // cin >> quantity;
+
+                                // menu.addItem(Item(name, price, quantity));
+                                // cout << "Item added to the menu." << '\n';
+                                // break;
                         }
 
                         case 2:{

@@ -6,6 +6,9 @@
 #include "Menu.h"
 #include <list>
 
+class UserManagement;
+class Menu;
+
 class Customer : public User{
     private:
         list<Item> currentOrder;
@@ -13,7 +16,7 @@ class Customer : public User{
 
     public:
         Customer(const string& id, const string& username, const string& password);
-        void displayOptions() const override;
+        void displayOptions(UserManagement& userManagement, Menu& menu) const;
         void viewMenu(const Menu& menu) const;
         void placeOrder(list<Order>& orders, const Menu& menu);
         void viewCurrentOrder() const;

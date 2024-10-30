@@ -1,0 +1,26 @@
+Item20|Bun bo Hue|50|Available|130
+Item21|Bun hen|20|Available|120
+Item22|Banh bot loc|20|Available|30
+Item23|Che bot loc heo quay|15|Available|10
+Item24|Xoi nep cam|30|Available|13
+Item25|Banh la gai|20|Available|49
+Item26|Chuoi chien|20|Available|37
+Item27|Goi mit tron|25|Available|40
+Item28|Banh beo|15|Available|50
+Item29|Banh it la gai|30|Available|25
+Item30|Banh canh ca loc|35|Available|60
+Item31|Com hen|25|Available|70
+Item32|Banh nam|10|Available|80
+Item33|Banh ram it|15|Available|45
+Item34|Banh uot thit nuong|25|Available|35
+Item35|Che bap|10|Available|50
+Item36|Banh cuon thit nuong|30|Available|22
+Item37|Nem lui|35|Available|28
+Item38|Bun thit nuong|40|Available|45
+Item39|Banh tam bi|20|Available|34
+Item40|Bun rieu cua|25|Available|55
+Item41|Che dau van|12|Available|65
+Item42|Che troi nuoc|10|Available|70
+Item43|Banh khoai|15|Available|33
+Item44|Bun mam nem|30|Available|50
+Item45|Chao long|20|Available|40
