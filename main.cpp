@@ -1,46 +1,58 @@
-#include "Authentication.h"
-#include "Usermanagement.h"
+#include "InterfaceSupport/Console.h"
+#include "InterfaceSupport/DisplayOption.h"
+#include "InterfaceSupport/Infor.h"
+#include "User/Authentication.h"
+#include "User/Usermanagement.h"
+#include "FoodDrink/OrderManager.h"
+#include "FoodDrink/Menu.h"
+#include "FoodDrink/Order.h"
+#include "Management/ListUser.h"
+
+#include <iomanip>  
 #include <iostream>
 #include <limits>
 #include <fstream>
+
 using namespace std;
 
-int main(){
+
+int main() {
+    infor();
+    DisplayOption::customPause();
+    
     UserManagement userManager;
-    int choice;
-    do{
-        cout <<"1. Register" << '\n'
-            << "2. Login" << '\n'   
-            << "3. Exit" << '\n'
-            << "Choose option: ";
-        cin >> choice;
+    Menu menu;
+    userManager.loadUsersFromFile();
+    menu.loadItemsFromFile();
+    
+    OrderManager orderManager;
+    orderManager.loadOrdersFromFile();
+    // orderManager.printOrders();
+    // system("pause");
+
+    system("cls");
+    const string mainMenuOptions[] = {"Register", "Login", "Exit"};
+    const int mainMenuSize = sizeof(mainMenuOptions) / sizeof(mainMenuOptions[0]);
+
+    while (true) {
+        int choice = DisplayOption::navigateMenu(mainMenuOptions, mainMenuSize, 1);
         
-        if (cin.fail() || choice < 1 || choice > 3){
-            cout <<"Invalid input. Please enter 1, 2, or 3.\n";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            system("pause");
+        if (choice == 0) {
+            registerUser(userManager);
+            DisplayOption::customPause();
             system("cls");
-        }
-        else{
-            if (choice == 1){
-                registerUser(userManager);
-                system("pause");
-                system("cls");
+        } else if (choice == 1) {
+            User* user = loginUser(userManager);
+            DisplayOption::customPause();
+            system("cls");
+            if (user != nullptr) {
+                user->displayOptions(userManager, menu, orderManager.getListOrder());
             }
-            else if (choice == 2){
-                User* user = loginUser(userManager);
-                system("pause");
-                system("cls");
-                if (user != nullptr){
-                    user->displayOptions();
-                    system("pause");
-                    system("cls");
-                }
-            }
+        } else if (choice == 2) {
+            break;
         }
+    }
 
-    } while (choice != 3);
-
+    Console::setcolor(0, 15);
     return 0;
 }
