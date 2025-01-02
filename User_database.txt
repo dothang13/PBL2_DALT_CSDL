@@ -1,4 +1,0 @@
-User1|hbq|123456|ADMIN
-User2|ndt01|abc123|CUSTOMER
-User3|nguyenvana|abcd1234|EMPLOYEE
-User4|khanhngan|1234|CUSTOMER
